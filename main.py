@@ -27,10 +27,6 @@ def main():
 
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
     font = pygame.font.Font(None, 36)
-    text_surface = font.render("Score: %s " % score, True, "white")
-    text_rect = text_surface.get_rect()
-    text_rect.bottomright = (SCREEN_WIDTH - 10, SCREEN_HEIGHT - 10)
-
     dt = 0
 
     while True:
@@ -57,6 +53,9 @@ def main():
         for obj in drawable:
             obj.draw(screen)
 
+        text_surface = font.render("Score: %s " % score, True, "white")
+        text_rect = text_surface.get_rect()
+        text_rect.bottomright = (SCREEN_WIDTH - 10, SCREEN_HEIGHT - 10)
         screen.blit(text_surface, text_rect)
 
         pygame.display.flip()
